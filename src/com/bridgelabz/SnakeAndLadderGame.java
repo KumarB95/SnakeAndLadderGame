@@ -9,7 +9,7 @@ public class SnakeAndLadderGame {
         int playerPosition=0;
         System.out.println("Starting player position is "+playerPosition+" ; Player rolls die");
         Random rand=new Random();
-        int rollOutput,option;
+        int rollOutput,option,numberOfTimesDieRolled=0;
 
 
         while (playerPosition!=100){
@@ -20,25 +20,26 @@ public class SnakeAndLadderGame {
 
             switch (option) {
                 case 0:
-                    System.out.println("No Play");
+                    //System.out.println("No Play");
                     playerPosition += 0;
                     break;
                 case 1:
-                    System.out.println("Snake");
+                    //System.out.println("Snake");
                     playerPosition = playerPosition - rollOutput + 1;
                     if (playerPosition < 0) {
                         playerPosition = 0;
                     }
                     break;
                 case 2:
-                    System.out.println("Ladder");
+                    //System.out.println("Ladder");
                     playerPosition += rollOutput + 1;
                     break;
             }
             if (playerPosition == 100){
-                System.out.println(playerPosition);
+                System.out.println("Player at winning position :"+playerPosition);
                 break;}
-
+            numberOfTimesDieRolled++;
         }
+        System.out.println("Number of times die Rolled to Win game : "+numberOfTimesDieRolled);
     }
 }
